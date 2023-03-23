@@ -1,5 +1,5 @@
-const { productsModel } = require('../models');
 const schema = require('./validations/validationsInputs');
+const { productsModel } = require('../models');
 
 const listProducts = async () => {
   const products = await productsModel.listProducts();
@@ -21,8 +21,8 @@ const deleteProductById = async (productId) => {
   if (!productsIds.includes(productId)) {
     return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
   }
-  await productsModel.deleteProductById(productId);
 
+  await productsModel.deleteProductById(productId);
   return {};
 };
 
